@@ -40,8 +40,13 @@ if (odp == "t"):
         print(f"ChatGPT: {reply}")
         messages.append({"role": "assistant", "content": reply})
 
+        with open("artykul.html", "w", encoding="utf-8") as file:
+            file.write(reply)
+
     except openai.error.RateLimitError:
             print("Rate limit exceeded. Retrying in 5 secounds...")
             time.sleep(5)
     except openai.error.OpenAIError as e:
             print(f"An error occurred: {e}")
+
+    artykul.close(), prompt.close(), artykul.close()
