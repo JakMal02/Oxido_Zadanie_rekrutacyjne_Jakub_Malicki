@@ -3,7 +3,7 @@ import time
 from dotenv import load_dotenv
 import os
 
-load_dotenv
+load_dotenv()
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
@@ -39,3 +39,9 @@ if (odp == "t"):
         reply = chat.choices[0].message.content
         print(f"ChatGPT: {reply}")
         messages.append({"role": "assistant", "content": reply})
+
+    except openai.error.RateLimitError:
+            print("Rate limit exceeded. Retrying in 5 secounds...")
+            time.sleep(5)
+    except openai.error.OpenAIError as e:
+            print(f"An error occurred: {e}")
