@@ -7,7 +7,7 @@ load_dotenv
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
-messagees = [
+messages = [
     {"role": "system", "content": "You are helpful assistant"},
 ]
 
@@ -23,3 +23,19 @@ if (odp == "n"):
     exit()
 
 if (odp == "t"):
+
+    print("User: " + text)
+    message = text
+    
+    if message:
+        messages.append(
+            {"role": "user", "content": message},
+        )
+    try:
+        chat = openai.ChatCompletion.create(
+            model="gpt-4o", messages=messages
+        )
+
+        reply = chat.choices[0].message.content
+        print(f"ChatGPT: {reply}")
+        messages.append({"role": "assistant", "content": reply})
