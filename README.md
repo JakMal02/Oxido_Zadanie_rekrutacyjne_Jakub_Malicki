@@ -1,6 +1,6 @@
 Program jest aplikacją konsolową.
 
-Działa w następujący sposób:
+**Działa w następujący sposób:**
 
 iportuje bibliotekę openai
 importuje bibliotekę do odczytywania indywidualnych zmiennych środowiskowych, w tym przypadku mojego klucza do API OpenAI.
