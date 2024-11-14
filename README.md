@@ -24,3 +24,10 @@ Tutaj odpoweidź od ChatuGPT również wyświetlam na ekranie w terminalu.
 Następnie zapisuję wygenerowaną odpowiedź do pliku artykul.html (jeśli nie ma takiego pliku w folderze utworzyłby się). Dodałem szyfrowanie utf-8 w celu możliwości zapisu polskich znaków.
 
 Kolejne linijki kodu są do sprawdzenia błędów, poinformowaniu o tym użytkownika oraz zamknięcia otwartych plików w celu uwolnienia pamięci.
+
+**Instrukcja uruchomienia**
+Sklonować projekt
+Po odpaleniu programu w pythonie użytkownik będzie musiał stworzyć własny plik .env z swoim kluczem api, ponieważ inaczej nie będzie to dziłać.
+Dodatkowo trzeba zainstalować biblioteki: 
+  pip install openai - biblioteka do zarządzania OpenAI i łączenia się z ChatemGPT
+  pip install python-dotenv - biblioteka do zarządzania .env i przechowywaniem kluczy api.
